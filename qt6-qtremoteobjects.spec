@@ -6,7 +6,7 @@
 
 Name:		qt6-qtremoteobjects
 Version:	6.5.0
-Release:	%{?beta:0.%{beta}.1}%{?snapshot:1.%{snapshot}.}1
+Release:	%{?beta:0.%{beta}.1}%{?snapshot:0.%{snapshot}.}2
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qtremoteobjects-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -38,7 +38,7 @@ Qt %{major} Remote Objects module
 %{_qtdir}/mkspecs/features/rep*.pr? \
 %{_qtdir}/mkspecs/features/remoteobjects_repc.prf \
 %{_qtdir}/modules/RepParser.json \
-%{_qtdir}/lib/pkgconfig/Qt6RepParser.pc \
+%{_libdir}/pkgconfig/Qt6RepParser.pc \
 %{_qtdir}/lib/cmake/Qt6RepParser \
 %{_qtdir}/libexec/repc
 
@@ -74,3 +74,4 @@ export LD_LIBRARY_PATH="$(pwd)/build/lib:${LD_LIBRARY_PATH}"
 
 %install
 %ninja_install -C build
+%qt6_postinstall
