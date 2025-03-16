@@ -1,11 +1,11 @@
-#define beta rc2
+%define beta rc
 #define snapshot 20200627
 %define major 6
 
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtremoteobjects
-Version:	6.8.2
+Version:	6.9.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -40,6 +40,7 @@ Qt %{major} Remote Objects module
 %{_qtdir}/modules/RepParser.json \
 %{_libdir}/pkgconfig/Qt6RepParser.pc \
 %{_qtdir}/lib/cmake/Qt6RepParser \
+%{_qtdir}/lib/cmake/Qt6RepParserPrivate \
 %{_qtdir}/libexec/repc \
 %{_qtdir}/sbom/*
 
