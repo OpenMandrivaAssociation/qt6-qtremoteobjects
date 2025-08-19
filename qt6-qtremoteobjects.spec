@@ -26,6 +26,7 @@ BuildRequires:	cmake(Qt%{major}Widgets)
 BuildRequires:	cmake(Qt%{major}Quick)
 BuildRequires:	cmake(Qt%{major}QuickTest)
 BuildRequires:	cmake(Qt%{major}OpenGL)
+BuildRequires:	pkgconfig(opengl)
 BuildRequires:	qt%{major}-cmake
 License:	LGPLv3/GPLv3/GPLv2
 
