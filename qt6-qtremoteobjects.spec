@@ -6,7 +6,7 @@
 
 Name:		qt6-qtremoteobjects
 Version:	6.11.1
-Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
+Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}2
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qtremoteobjects-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -44,6 +44,9 @@ Qt %{major} Remote Objects module
 %{_qtdir}/lib/cmake/Qt6RepParser \
 %{_qtdir}/libexec/repc \
 %{_qtdir}/sbom/*
+
+%global extra_devel_reqprov_RemoteObjects \
+Provides: cmake(Qt%{major}RepParserPrivate) = %{EVRD}
 
 %global extra_files_RemoteObjectsQml \
 %{_qtdir}/qml/QtRemoteObjects
